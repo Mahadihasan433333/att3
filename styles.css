@@ -8,18 +8,77 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background-color: #1C1C1C; /* Primary Dark Color - Very Dark Gray */
-    color: #F4F4F4; /* Neutral Light Gray */
+    background-color: #1C1C1C;
+    color: #F4F4F4;
     padding: 0;
     margin: 0;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #F4F4F4;
+    color: #1C1C1C;
+}
+
+body.light-mode header,
+body.light-mode #about,
+body.light-mode #projects,
+body.light-mode #contact,
+body.light-mode footer {
+    background-color: #E0E0E0;
+    color: #1C1C1C;
+}
+
+body.light-mode nav.scrolled {
+    background-color: #CCC;
+}
+
+body.light-mode .nav-links a {
+    color: #1C1C1C;
+}
+
+body.light-mode .nav-links a:hover {
+    color: #FF7F50;
+}
+
+body.light-mode #hero h2,
+body.light-mode #hero p,
+body.light-mode #about h2,
+body.light-mode #projects h2,
+body.light-mode #contact h2,
+body.light-mode .project-card h3 {
+    color: #1C1C1C;
+}
+
+body.light-mode .project-card {
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .btn,
+body.light-mode .project-card a,
+body.light-mode #contact a {
+    background-color: #FF7F50;
+    color: #1C1C1C;
+}
+
+body.light-mode #scrollTopBtn {
+    background-color: #333;
+    color: #fff;
 }
 
 /* Header */
 header {
-    background-color: #333333; /* Secondary Dark Gray */
-    color: #F4F4F4; /* Neutral Light Text */
+    background-color: #333333;
+    color: #F4F4F4;
     padding: 1rem;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.5s, color 0.5s;
 }
 
 header h1 {
@@ -33,6 +92,11 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    transition: background-color 0.3s;
+}
+
+nav.scrolled {
+    background-color: #444;
 }
 
 .nav-links {
@@ -45,48 +109,53 @@ nav {
 }
 
 .nav-links a {
-    color: #F4F4F4; /* Neutral Light Text */
-    text-decoration: none;
+    font-size: 1.1rem;
     font-weight: 500;
+    color: #F4F4F4;
+    text-decoration: none;
 }
 
 .nav-links a:hover {
-    color: #FF7F50; /* Accent Soft Orange */
+    color: #FF7F50;
 }
 
 /* Hero Section */
 #hero {
     background: url('./images/background.jpg') no-repeat center center/cover;
-    background-color: #333333; /* Secondary Dark Gray as fallback */
-    background-attachment: scroll;
-    color: #F4F4F4; /* Neutral Light Text */
+    background-color: #333333;
+    background-attachment: fixed;
+    color: #F4F4F4;
     height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 #hero h2 {
     font-size: 3rem;
     margin-bottom: 20px;
     margin-top: -20px;
-    color: #F4F4F4; /* Neutral Light Text */
+    color: #F4F4F4;
+    height: 2.5em;
+    transition: color 0.5s;
 }
 
 #hero p {
     font-size: 1.5rem;
     margin-bottom: 30px;
     margin-top: -10px;
-    color: #C0C0C0; /* Neutral Soft Gray Text */
+    color: #C0C0C0;
+    transition: color 0.5s;
 }
 
 /* Button Animations */
 #hero .btn, .project-card a, #contact a {
-    background-color: #FF7F50; /* Accent Soft Orange */
+    background-color: #FF7F50;
     padding: 10px 20px;
-    color: #1C1C1C; /* Primary Dark Color */
+    color: #1C1C1C;
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
@@ -95,102 +164,152 @@ nav {
 
 /* Button Hover - Scale and Color Change */
 #hero .btn:hover, .project-card a:hover, #contact a:hover {
-    transform: scale(1.1); /* Scale-up effect */
-    background-color: #F4F4F4; /* Color change to Light Gray on hover */
-    color: #FF7F50; /* Soft Orange text on hover */
+    transform: scale(1.1);
+    background-color: #F4F4F4;
+    color: #FF7F50;
 }
 
 /* About Section */
 #about {
     padding: 50px;
     text-align: center;
-    background-color: #333333; /* Secondary Dark Gray */
+    background-color: #333333;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 #about h2 {
     margin-bottom: 20px;
-    color: #F4F4F4; /* Neutral Light Text */
+    color: #F4F4F4;
+    transition: color 0.5s;
 }
 
 #about p {
     font-size: 1.2rem;
-    color: #C0C0C0; /* Soft Gray */
+    color: #C0C0C0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 1s ease-out, transform 1s ease-out, color 0.5s;
+}
+
+#about p.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Projects Section */
 #projects {
     padding: 50px;
-    background-color: #333333; /* Secondary Dark Gray */
+    background-color: #333333;
     text-align: center;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 #projects h2 {
     margin-bottom: 30px;
-    color: #F4F4F4; /* Neutral Light Text */
+    color: #F4F4F4;
+    transition: color 0.5s;
 }
 
 .project-card {
-    background-color: #1C1C1C; /* Primary Dark Color */
+    background-color: #1C1C1C;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft Shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out, background-color 0.5s, color 0.5s;
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-card h3 {
     margin-bottom: 10px;
-    color: #F4F4F4; /* Neutral Light Text */
+    color: #F4F4F4;
+    transition: color 0.5s;
 }
 
 .project-card a {
-    background-color: #FF7F50; /* Accent Soft Orange */
+    background-color: #FF7F50;
     padding: 10px 20px;
-    color: #1C1C1C; /* Primary Dark Color */
+    color: #1C1C1C;
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.5s;
 }
 
 /* Contact Section */
 #contact {
     padding: 50px;
-    background-color: #333333; /* Secondary Dark Gray */
-    color: #F4F4F4; /* Neutral Light Text */
+    background-color: #333333;
+    color: #F4F4F4;
     text-align: center;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 #contact h2 {
     margin-bottom: 20px;
-    color: #F4F4F4; /* Neutral Light Text */
+    color: #F4F4F4;
+    transition: color 0.5s;
 }
 
 #contact p {
     font-size: 1.2rem;
-    color: #F4F4F4; /* Neutral Light Text */
+    color: #F4F4F4;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 1s ease-out, transform 1s ease-out, color 0.5s;
+}
+
+#contact p.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #contact a {
-    background-color: #FF7F50; /* Accent Soft Orange */
+    background-color: #FF7F50;
     padding: 10px 20px;
-    color: #1C1C1C; /* Primary Dark Color */
+    color: #1C1C1C;
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.5s;
 }
 
 /* Footer */
 footer {
-    background-color: #000000; /* Black */
-    color: #F4F4F4; /* Neutral Light Text */
+    background-color: #000000;
+    color: #F4F4F4;
     text-align: center;
     padding: 20px 0;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 footer p {
     margin: 0;
     font-size: 0.9rem;
+}
+
+/* Scroll Back to Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.4s ease, background-color 0.5s, color 0.5s;
+}
+
+#scrollTopBtn.visible {
+    display: block;
+    opacity: 0.8;
 }
 
 /* Responsive Styles */
