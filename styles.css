@@ -55,7 +55,7 @@ nav {
 
 /* Hero Section */
 #hero {
-    background: url('your-image-url-here') no-repeat center center/cover;
+    background: url('./images/background.jpg') no-repeat center center/cover;
     background-attachment: scroll;
     color: #fff;
     height: 80vh;
