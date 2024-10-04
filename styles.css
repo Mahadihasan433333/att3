@@ -69,12 +69,14 @@ nav {
 #hero h2 {
     font-size: 3rem;
     margin-bottom: 20px;
+    margin-top: -20px;
     color: #000;
 }
 
 #hero p {
     font-size: 1.5rem;
     margin-bottom: 30px;
+    margin-top: -10px;
     color: #000;
 }
 
