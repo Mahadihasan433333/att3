@@ -8,15 +8,16 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #1C1C1C; /* Primary Dark Color - Very Dark Gray */
+    color: #F4F4F4; /* Neutral Light Gray */
     padding: 0;
     margin: 0;
 }
 
+/* Header */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #333333; /* Secondary Dark Gray */
+    color: #F4F4F4; /* Neutral Light Text */
     padding: 1rem;
     text-align: center;
 }
@@ -44,20 +45,21 @@ nav {
 }
 
 .nav-links a {
-    color: #fff;
+    color: #F4F4F4; /* Neutral Light Text */
     text-decoration: none;
     font-weight: 500;
 }
 
 .nav-links a:hover {
-    color: #f7c600;
+    color: #FF7F50; /* Accent Soft Orange */
 }
 
 /* Hero Section */
 #hero {
     background: url('./images/background.jpg') no-repeat center center/cover;
+    background-color: #333333; /* Secondary Dark Gray as fallback */
     background-attachment: scroll;
-    color: #fff;
+    color: #F4F4F4; /* Neutral Light Text */
     height: 80vh;
     display: flex;
     flex-direction: column;
@@ -70,106 +72,118 @@ nav {
     font-size: 3rem;
     margin-bottom: 20px;
     margin-top: -20px;
-    color: #000;
+    color: #F4F4F4; /* Neutral Light Text */
 }
 
 #hero p {
     font-size: 1.5rem;
     margin-bottom: 30px;
     margin-top: -10px;
-    color: #000;
+    color: #C0C0C0; /* Neutral Soft Gray Text */
 }
 
-#hero .btn {
-    background-color: #f7c600;
+/* Button Animations */
+#hero .btn, .project-card a, #contact a {
+    background-color: #FF7F50; /* Accent Soft Orange */
     padding: 10px 20px;
-    color: #333;
+    color: #1C1C1C; /* Primary Dark Color */
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-#hero .btn:hover {
-    background-color: #333;
-    color: #fff;
+/* Button Hover - Scale and Color Change */
+#hero .btn:hover, .project-card a:hover, #contact a:hover {
+    transform: scale(1.1); /* Scale-up effect */
+    background-color: #F4F4F4; /* Color change to Light Gray on hover */
+    color: #FF7F50; /* Soft Orange text on hover */
 }
 
 /* About Section */
 #about {
     padding: 50px;
     text-align: center;
+    background-color: #333333; /* Secondary Dark Gray */
 }
 
 #about h2 {
     margin-bottom: 20px;
+    color: #F4F4F4; /* Neutral Light Text */
 }
 
 #about p {
     font-size: 1.2rem;
+    color: #C0C0C0; /* Soft Gray */
 }
 
 /* Projects Section */
 #projects {
     padding: 50px;
-    background-color: #f4f4f4;
+    background-color: #333333; /* Secondary Dark Gray */
     text-align: center;
 }
 
 #projects h2 {
     margin-bottom: 30px;
+    color: #F4F4F4; /* Neutral Light Text */
 }
 
 .project-card {
-    background-color: #fff;
+    background-color: #1C1C1C; /* Primary Dark Color */
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft Shadow */
     margin-bottom: 20px;
 }
 
 .project-card h3 {
     margin-bottom: 10px;
+    color: #F4F4F4; /* Neutral Light Text */
 }
 
 .project-card a {
-    color: #f7c600;
+    background-color: #FF7F50; /* Accent Soft Orange */
+    padding: 10px 20px;
+    color: #1C1C1C; /* Primary Dark Color */
+    text-transform: uppercase;
+    font-weight: bold;
     text-decoration: none;
-}
-
-.project-card a:hover {
-    color: #333;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Contact Section */
 #contact {
     padding: 50px;
-    background-color: #333;
-    color: #fff;
+    background-color: #333333; /* Secondary Dark Gray */
+    color: #F4F4F4; /* Neutral Light Text */
     text-align: center;
 }
 
 #contact h2 {
     margin-bottom: 20px;
+    color: #F4F4F4; /* Neutral Light Text */
 }
 
 #contact p {
     font-size: 1.2rem;
+    color: #F4F4F4; /* Neutral Light Text */
 }
 
 #contact a {
-    color: #f7c600;
+    background-color: #FF7F50; /* Accent Soft Orange */
+    padding: 10px 20px;
+    color: #1C1C1C; /* Primary Dark Color */
+    text-transform: uppercase;
+    font-weight: bold;
     text-decoration: none;
-}
-
-#contact a:hover {
-    color: #fff;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Footer */
 footer {
-    background-color: #222;
-    color: #f4f4f4;
+    background-color: #000000; /* Black */
+    color: #F4F4F4; /* Neutral Light Text */
     text-align: center;
     padding: 20px 0;
 }
